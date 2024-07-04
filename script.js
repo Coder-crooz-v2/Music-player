@@ -128,22 +128,3 @@ backward.addEventListener('click', ()=>{
     audioElement.addEventListener('timeupdate',seekupdate);
     mainbannerupdate();
 })
-console.log(song);
-let addsong = document.getElementById('addsong');
-addsong.addEventListener('click',newsong);
-function newsong() {
-    let name = prompt("Enter the name of the song");
-    let artist = prompt("Enter the name of the artist");
-    let path = prompt("Enter the file path: local path or direct drive link");
-    let temp = confirm("Do you want to enter the cover path?");
-    let cover;
-    if (temp==true) {
-        cover = prompt("Enter the cover path: local path or direct drive link");
-    }
-    else
-    cover = "";
-    song.push({songname: `${name}`, artistname: `${artist}`, filepath: `${path}`, coverpath: `${cover}`});
-    noofsong = song.length;
-    console.log(song);
-    console.log(noofsong);
-}
