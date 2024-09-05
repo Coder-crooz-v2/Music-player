@@ -7,16 +7,16 @@ let seek = document.getElementById('seekbar');
 let progress = 0;
 let songindex = 0;
 let song = [
-    { songname: "Faded", artistname: "Alan Walker", filepath: "https://drive.google.com/uc?export=download&id=1iC9p-XqZeM02jp4JrWCAK1xHmIvF8gJy", coverPath: "https://drive.google.com/uc?export=download&id=170Vwrcv3PdKXmink6qFUzvzMQV87Z32J"}, 
-    { songname: "Pal Pal Dil ke Paas", artistname: "Arijit Singh", filepath: "https://drive.google.com/uc?export=download&id=1b2eDi2UJuC8OOgN7nZAPGEXrzHtINblm", coverPath: "https://drive.google.com/uc?export=download&id=1YQkSWhvi1Q399RNq4v4q8CmdPm0cchVi"}, 
-    { songname: "Boba Tunnel", artistname: "Anupam Roy", filepath: "https://drive.google.com/uc?export=download&id=1oCM06uIHQHZXJknlbORXg8sECCkxtsyw", coverPath: "https://drive.google.com/uc?export=download&id=1Fp2j7BrgK4oQdRO_-U0b5b_9O5BGzNOr"}, 
-    { songname: "Benche Thakar Gaan", artistname: "Fossils band", filepath: "https://drive.google.com/uc?export=download&id=1wmDGU5IsxQPJeigM4SW9YJ0e8TljI5UB", coverPath: "https://drive.google.com/uc?export=download&id=17IImAyV-ap-SZj-1tXfrHnw0RCyj1Ohj"}, 
-    { songname: "Bojhena se Bojhena", artistname: "Arijit Singh", filepath: "https://drive.google.com/uc?export=download&id=1eDEU4onGu9suv7SNnNhTFpTQbMJ0x4D-", coverPath: "https://drive.google.com/uc?export=download&id=1xbBRCoVINj2AZEvzdBVXMjy60lzgVZTf"}, 
-    { songname: "Love me like you do", artistname: "Elle Goulding", filepath: "https://drive.google.com/uc?export=download&id=18IssVJ5bt3QAECCKuPUza0MXpP6yj7bd", coverPath: "https://drive.google.com/uc?export=download&id=1aJqMxiMrmLH7MLXOx-FjtB0SXPWfC_XK"}, 
-    { songname: "Let me down slowly", artistname: "Alec Benjamin", filepath: "https://drive.google.com/uc?export=download&id=1MrEGSNJDMtbax_-ZbKez7vD-qY339BJQ", coverPath: "https://drive.google.com/uc?export=download&id=1_jZnE1QsAtQN5qK3uYxBik0_KuRDO30m"}, 
-    { songname: "Pee Loon", artistname: "Mohit Chauhan", filepath: "https://drive.google.com/uc?export=download&id=1scbJDaDSBMroirqUd4s0ZbAs8JoVOMjW", coverPath: "https://drive.google.com/uc?export=download&id=1pUJghUR-_MJJK-MOkLfSeR0JwpSE0SKN"}, 
-    { songname: "Phir aur kya chahiye", artistname: "Arijit Singh", filepath: "https://drive.google.com/uc?export=download&id=1k6K0Bwd0jBPKUI0dxBoHDAJTvyeUIJd1", coverPath: "https://drive.google.com/uc?export=view&id=19VwcUqKSdAH5HpmxiP-UTplGC5ZaoL5D"}, //https://drive.google.com/file/d/19VwcUqKSdAH5HpmxiP-UTplGC5ZaoL5D/view?usp=drive_link
-    { songname: "Ae Dil hai Mushkil", artistname: "Arijit Singh", filepath: "https://drive.google.com/uc?export=download&id=1SQcntMYfy9AB9ELYkGxJjVzjHv6Rd1v7", coverPath: "https://drive.google.com/uc?export=download&id=1opFmHwX0VvgMS9h8EPWtCcSj0Koh1enI"}, 
+    { songname: "Faded", artistname: "Alan Walker", filepath: "faded.mp3", coverPath: "faded.jpg"}, 
+    { songname: "Pal Pal Dil ke Paas", artistname: "Arijit Singh", filepath: "Pal Pal Dil Ke Paas.mp3", coverPath: "pal pal dil ke paas.jpeg"}, 
+    { songname: "Boba Tunnel", artistname: "Anupam Roy", filepath: "Boba tunnel.mp3", coverPath: "boba tunnel.jpeg"}, 
+    { songname: "Benche Thakar Gaan", artistname: "Fossils band", filepath: "Benche Thakar Gaan.mp3", coverPath: "Benche Thakar Gaan.jpeg"}, 
+    { songname: "Bojhena se Bojhena", artistname: "Arijit Singh", filepath: "Bojhena se Bojhena.mp3", coverPath: "Bojhena se Bojhena.jpeg"}, 
+    { songname: "Love me like you do", artistname: "Elle Goulding", filepath: "Love me like you do.mp3", coverPath: "Love me like you do.jpeg"}, 
+    { songname: "Let me down slowly", artistname: "Alec Benjamin", filepath: "Let me down slowly.mp3", coverPath: "Let me down slowly.jpeg"}, 
+    { songname: "Pee Loon", artistname: "Mohit Chauhan", filepath: "PEE LOON.mp3", coverPath: "pee loon.jpg"}, 
+    { songname: "Phir aur kya chahiye", artistname: "Arijit Singh", filepath: "Phir aur kya chahiye.mp3", coverPath: "Phir aur kya chahiye.jpg"},
+    { songname: "Ae Dil hai Mushkil", artistname: "Arijit Singh", filepath: "Ae dil hai mushkil.mp3", coverPath: "Ae dil hai mushkil.jpg"}, 
 ]
 let noofsong = song.length;
 let audioElement = new Audio('faded.mp3');
@@ -128,3 +128,22 @@ backward.addEventListener('click', ()=>{
     audioElement.addEventListener('timeupdate',seekupdate);
     mainbannerupdate();
 })
+console.log(song);
+let addsong = document.getElementById('addsong');
+addsong.addEventListener('click',newsong);
+function newsong() {
+    let name = prompt("Enter the name of the song");
+    let artist = prompt("Enter the name of the artist");
+    let path = prompt("Enter the file path: local path or direct drive link");
+    let temp = confirm("Do you want to enter the cover path?");
+    let cover;
+    if (temp==true) {
+        cover = prompt("Enter the cover path: local path or direct drive link");
+    }
+    else
+    cover = "";
+    song.push({songname: `${name}`, artistname: `${artist}`, filepath: `${path}`, coverpath: `${cover}`});
+    noofsong = song.length;
+    console.log(song);
+    console.log(noofsong);
+}
